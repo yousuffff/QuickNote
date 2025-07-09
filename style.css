@@ -52,7 +52,7 @@ header {
 
 .add-note-btn {
   background: var(--brand-color);
-  color: var(--text-color);
+  color: white;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
@@ -84,8 +84,10 @@ header {
 
 .notes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* was 300px */
   gap: 1.5rem;
+  min-height: 200px;
+  place-items: center; /* centers content like the empty message */
 }
 
 .note-card {
@@ -275,45 +277,67 @@ dialog::backdrop {
   background: #7a7fff;
 }
 
-.empty-state {
-  text-align: center;
-  padding: 4rem 2rem;
-  color: var(--secondary-text-color);
-}
-
-.empty-state h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.empty-state p {
-  font-size: 1rem;
-  margin-bottom: 2rem;
-}
 .empty-message {
   text-align: center;
   color: #666;
   font-style: italic;
   font-size: 1rem;
-  margin-top: 2rem;
+  margin: auto;
   line-height: 1.6;
   transition: color 0.3s ease;
+  max-width: 400px;
 }
 
 body.dark-theme .empty-message {
   color: #ccc;
 }
-.empty-message {
-  text-align: center;
-  color: #666;
-  font-style: italic;
-  font-size: 1rem;
-  margin-top: 2rem;
-  line-height: 1.6;
-  transition: color 0.3s ease;
+@media (max-width: 768px) {
+  .notes-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .note-card {
+    padding: 1rem;
+  }
+
+  .note-title {
+    font-size: 1.1rem;
+  }
+
+  .note-content {
+    font-size: 0.95rem;
+  }
+
+  .add-note-btn,
+  .theme-toggle-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .theme-toggle-btn {
+    margin-left: 5px;
+  }
+
+  .dialog-content {
+    padding: 1.5rem;
+  }
 }
 
-body.dark-theme .empty-message {
-  color: #ccc;
+@media (max-width: 480px) {
+  .dialog-title {
+    font-size: 1.25rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    padding: 0.6rem;
+    font-size: 0.95rem;
+  }
+
+  .save-btn,
+  .cancel-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
 }

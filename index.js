@@ -130,3 +130,17 @@ function applyTheme() {
     document.getElementById("themeToggleBtn").textContent = "🌞";
   }
 }
+function updateAddButtonText() {
+  const addBtn = document.querySelector(".add-note-btn");
+  if (window.innerWidth <= 768) {
+    addBtn.textContent = "+";
+  } else {
+    addBtn.textContent = "+ Add Note";
+  }
+}
+
+// Run on page load
+updateAddButtonText();
+
+// Run whenever window is resized
+window.addEventListener("resize", updateAddButtonText);
