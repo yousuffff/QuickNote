@@ -291,3 +291,29 @@ dialog::backdrop {
   font-size: 1rem;
   margin-bottom: 2rem;
 }
+.empty-message {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  font-size: 1rem;
+  margin-top: 2rem;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+body.dark-theme .empty-message {
+  color: #ccc;
+}
+.empty-message {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  font-size: 1rem;
+  margin-top: 2rem;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+body.dark-theme .empty-message {
+  color: #ccc;
+}

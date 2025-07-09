@@ -60,8 +60,12 @@ function openNoteDialog(noteId) {
 function renderNotes() {
   const notesContainer = document.getElementById("notesContainer");
   if (notes.length === 0) {
-    notesContainer.innerHTML =
-      "<p>No notes available. Click 'Add Note' to create one.</p>";
+    notesContainer.innerHTML = `
+  <p class="empty-message">
+    📝 You haven't added any notes yet.<br>
+    Click <strong>"Add Note"</strong> to get started!
+  </p>`;
+
     return;
   }
   notesContainer.innerHTML = notes
